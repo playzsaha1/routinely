@@ -1,19 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" context="width=device-width, initial-scale=1.0" />
-<title>Spendly | Spending Tracker</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spendly | Spending Tracker</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div> 
-<h1>Spendly</h1>
-<p>Track your money, stay in control.</p>
-<div>
-<button id="themeBtn">🌙</button>
-</header>
+  <div class="app">
+    <header>
+      <div>
+        <h1>Spendly</h1>
+        <p>Track your money, stay in control.</p>
+      </div>
+      <button id="themeBtn">🌙</button>
+    </header>
 
-<section class="cards>"
-<div class="card balance">
-<p>Total Balance</p>
+    <section class="cards">
+      <div class="card balance">
+        <p>Total Balance</p>
+        <h2 id="balance">$0.00</h2>
+      </div>
+      <div class="card">
+        <p>Income</p>
+        <h2 id="income">$0.00</h2>
+      </div>
+      <div class="card">
+        <p>Expenses</p>
+        <h2 id="expenses">$0.00</h2>
+      </div>
+    </section>
+
+    <section class="main">
+      <div class="panel">
+        <h2>Add Transaction</h2>
+
+        <input id="title" type="text" placeholder="Transaction name" />
+        <input id="amount" type="number" placeholder="Amount" />
+
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+
+        <select id="category">
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Bills">Bills</option>
+          <option value="Uni">Uni</option>
+          <option value="Pay">Pay</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <button id="addBtn">Add Transaction</button>
+
+        <div class="budget-box">
+          <h3>Monthly Budget</h3>
+          <input id="budgetInput" type="number" placeholder="Set budget limit" />
+          <button id="budgetBtn">Save Budget</button>
+          <p id="budgetText">No budget set.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Recent Transactions</h2>
+        <div id="transactions"></div>
+      </div>
+    </section>
+
+    <section class="panel insight">
+      <h2>Spending Insight</h2>
+      <p id="insightText">Add transactions to see insights.</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
